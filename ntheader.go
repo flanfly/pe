@@ -441,9 +441,10 @@ func (pe *File) ParseNTHeader() (err error) {
 	}
 
 	// ImageBase should be multiple of 10000h.
-	if (pe.Is64 && oh64.ImageBase%0x10000 != 0) || (pe.Is32 && oh32.ImageBase%0x10000 != 0) {
-		return ErrImageBaseNotAligned
-	}
+	//if (pe.Is64 && oh64.ImageBase%0x10000 != 0) || (pe.Is32 && oh32.ImageBase%0x10000 != 0) {
+	//	fmt.Printf("ImageBase: %x\n", oh64.ImageBase)
+	//	return ErrImageBaseNotAligned
+	//}
 
 	// ImageBase can be any value as long as:
 	// ImageBase + SizeOfImage < 80000000h for PE32.
